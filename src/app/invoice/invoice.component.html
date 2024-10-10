@@ -1,0 +1,72 @@
+<div class="container-fluid mt-5"> 
+  <div class="row justify-content-center">
+
+    <div class="col-lg-7"> 
+      <div class="card shadow-lg border-0 rounded-lg">
+
+        <!-- Invoice Header -->
+        <div class="card-header bg-dark text-white text-center py-4">
+          <h1 class="text-uppercase mb-0">Invoice</h1>
+        </div>
+
+        <div class="card-body p-5"> <!-- زدت المساحات الداخلية -->
+          <div class="row ">
+
+            <div class="col-md-6">
+              <h3 ><strong>ORDER INFORMATION</strong></h3>
+              <div class="mb-2">
+                <strong>Date: </strong>
+                <span class="text-muted">{{ currentDate }}</span>
+              </div>
+              <div>
+                <strong>Order ID: </strong> 
+                <span class="text-muted">{{ orderId }}</span>
+              </div>
+            </div>
+
+            <!-- Buyer Information -->
+            <div class="col-md-6 text-md-end">
+              <h3><strong>BUYER INFORMATION</strong></h3>
+              <div><strong>Name: </strong> <span class="text-muted">{{ userInfo.fullName }}</span></div>
+              <div><strong>Location: </strong> <span class="text-muted">{{ userInfo.address }}</span></div>
+              <div><strong>Email: </strong> <span class="text-muted">{{ userInfo.email }}</span></div>
+              <div><strong>Phone: </strong> <span class="text-muted">{{ userInfo.phone }}</span></div>
+            </div>
+          </div>
+
+          <!-- Product Table -->
+          <div class="table-responsive ">
+            <h4 class="text-center mb-4 text-uppercase">Product Details</h4>
+            <table class="table table-bordered">
+              <thead class="bg-dark text-white">
+                <tr>
+                  <th>Product</th>
+                  <th class="text-center">Quantity</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cartItems">
+                  <td>{{ item.name }}</td>
+                  <td class="text-center">{{ item.quantity }}</td>
+                  <td class="text-center">{{ item.price | currency }}</td>
+                  <td class="text-center">{{ item.price * item.quantity | currency }}</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-end"><strong>Subtotal</strong></td>
+                  <td class="text-end"><strong>{{ totalAmount | currency }}</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pay Now Button -->
+          <div class="text-end mt-4" >
+            <button class="btn btn-success px-5 py-2 shadow" style="width: 20%;" type="button" (click)="confirmPayment()"><h5>Pay Now</h5></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

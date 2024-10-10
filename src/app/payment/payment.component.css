@@ -1,0 +1,26 @@
+.card-image {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.inlineimage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

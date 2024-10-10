@@ -1,0 +1,9 @@
+<div class="categories d-flex flex-wrap justify-content-center">
+  <button 
+    *ngFor="let category of categories" 
+    class="btn btn-outline-primary m-4 px-5 py-3 rounded-pill" 
+    style="min-width: 200px; font-size: 18px;" 
+    (click)="selectCategory(category)">
+    {{ category }}
+  </button>
+</div>

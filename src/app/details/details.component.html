@@ -1,0 +1,68 @@
+<div class="container-fluid mt-5 mb-5 m-5"> 
+  <div class="row py-5 justify-content-center">
+    <div class="col-lg-9"> <!-- عرض الكارت -->
+
+      <div class="card shadow-lg border-1 rounded m-3">
+        <div class="card-body">
+          <div class="row p-5 ">
+            <div class="col-lg-5">
+              <div class="row justify-content-center">
+
+                <div class="col-xl-8"> 
+                  <div  class="carousel slide product-detail-carousel pointer-event" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div>
+                          <img [src]="products_data?.image" alt="product-img" class="img-fluid rounded" style="width: 100%; height: 350px; object-fit: contain;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div>
+                <h2 class="mb-4 text-primary">{{ products_data?.name }}</h2>
+                <hr />
+                <div class="mb-4">
+                  <h5 class="d-inline-block text-secondary">Description:</h5>
+                  <p class="d-inline-block">{{ products_data?.description }}</p>
+                </div>
+                <div class="mb-4">
+                  <h5 class="d-inline-block text-secondary">Category:</h5>
+                  <p class="d-inline-block">{{ products_data.category }}</p>
+                  <h5 class="mb-2 text-success"><strong>Price: </strong>{{ products_data.price | currency }}<span> Per Unit</span></h5>
+                </div>
+
+                <div>
+                  <form class="d-flex  align-items-center ">
+                    <h5 class="me-3">Quantity:</h5>
+                    <div class="me-sm-4">
+                      <input type="number" 
+                      class="form-control my-1" 
+                      [(ngModel)]="selectedQuantity" 
+                      name="quantity" 
+                      [min]="1" 
+                      [ngModelOptions]="{standalone: true}" />
+                    </div>
+
+                    <div>
+                      <button type="button" class="btn btn-success me-3" (click)="increment()">Add To Cart</button>
+                      <a [routerLink]="['']" class="btn btn-outline-secondary">Back to List</a>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="mt-4">
+                  <button type="button" class="btn btn-warning btn-lg w-100" (click)="buyNow()">Buy Now</button>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

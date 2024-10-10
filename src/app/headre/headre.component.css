@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f5;
+}
+
+.logo {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 48px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #009688;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-icon:before {
+    content: 'TN';
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white;
+    font-size: 16px;
+}
+
+.fa-cart-shopping {
+    font-size: 20px;
+    color: white;
+}
+
+.badge-notification {
+    position: relative;
+    top: -10px;
+    right: -10px;
+    font-size: 12px;
+}
